@@ -1,0 +1,56 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* aside {} */
+body {
+  display: flex;
+  font: 14px/1.5 Arial, Helvetica, sans-serif;
+}
+
+aside {
+  width: 30%;
+  padding: 16px;
+  min-height: 100vh;
+  position: fixed;
+  border-left: 1px solid #ccc;
+  top: 0;
+  right: 0;
+}
+
+main {
+  width: 70%;
+  padding: 16px;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-list li {
+  padding: 4px;
+  background-color: #ccc;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.todo-list li a {
+  margin-right: 5px;
+}
+
+.todo-list li p:first-child {
+  font-weight: bolder;
+  text-transform: capitalize;
+}
+
+.todo-list .done {
+  background: green;
+}
+
+.todo-list li.done p:first-child {
+  color: #fff;
+}
+.todo-list li.done a {
+  color: #fff;
+}

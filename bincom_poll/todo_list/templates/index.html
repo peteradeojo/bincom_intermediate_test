@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+        <title>To Do List</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1>To Do List</h1>
+                {% comment %} <a href='/add'>Add Item</a> {% endcomment %}
+            </header>
+            <ul class="todo-list">
+                {% if items %}
+                    {% for item in items %}
+                        <li class="todo-item{% if item.status == True %} done{% endif %}">
+                            <p>
+                                {{ item }}
+                            </p>
+                            <p>
+                                {{ item.description }}
+                            </p>
+                            <a href='/toggle/{{ item.id }}'>
+                                {% if item.status == True %}
+                                    Mark Undone
+                                {% else %}
+                                    Mark Done
+                                {% endif %}
+                            </a>
+                            <a href='/delete/{{item.id}}'>Delete</a>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <li>No item in todo list</li>
+                {% endif %}
+            </ul>
+        </main>
+        <aside>
+            <form action='/add' method='post'>
+                {% csrf_token %}
+                <div>
+                    <label>Title</label>
+                    <input type='text' name='title' placeholder='Title' required />
+                </div>
+                <div>
+                    <label>Description</label>
+                    <textarea name='description' placeholder='Title'></textarea>
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </aside>
+    </body>
+</html>
