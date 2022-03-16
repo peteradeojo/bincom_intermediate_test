@@ -11,11 +11,11 @@ For question 1: Implement a Fibonacci series generator
 Implemented a fibonacci series generator function
 
 ```bash
-> git clone https://github.com/peteradeojo/bincom_intermediate_test.git
+git clone https://github.com/peteradeojo/bincom_intermediate_test.git
 
-> cd bincom_intermediate_test
+cd bincom_intermediate_test
 
-> python fibonacci.py
+python fibonacci.py
 
 ```
 
@@ -26,7 +26,7 @@ I built the web interface with Django and the database with Postgresql
 Change the database settings in `bincom_poll/bincom_poll/settings.py`
 
 ```bash
-> cd bincom_poll
-> python manage.py migrate
-> python manage.py runserver
+cd bincom_poll
+python manage.py migrate
+python manage.py runserver
 ```
