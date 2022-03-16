@@ -1,21 +1,25 @@
 #!python
 
-def fibonnacci(n):
-  a = 1
-  b = 1
-  bridge = 0
-  if n > 1:
+
+def fibonnacci():
+    a = 1
+    b = 1
+    # if n > 1:
     print(a)
     print(b)
-  
-  def fix(a,b):
-    bridge = a
-    a = b
-    b = bridge + b
-    if (b < n):
-      print(b)
-      fix(a,b)
 
-  fix(a,b)
+    while True:
+        bridge = a
+        c = b
+        d = bridge + c
+        yield (d)
+        a = b
+        b = bridge + b
 
-fibonnacci(23)
+
+fib = fibonnacci()
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
+print(next(fib))
